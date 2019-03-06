@@ -1,7 +1,6 @@
-# tko-alert
+# tko-alert 
 
-**Document**  
-
+Load File
 ```html
 <link rel="stylesheet" href="./tko-alert-box.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
