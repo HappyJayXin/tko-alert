@@ -2,8 +2,6 @@
 
 **Document**  
 
-
-引入
 ```html
 <link rel="stylesheet" href="./tko-alert-box.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
@@ -20,8 +18,8 @@ HTML
       需要重新至您的信箱做驗證。   
     </div>
     <div class="alert-btn-block">
-      <button id="cancel-alert">取消</button>
-      <button id="agree-alert">確認</button>
+      <button class="cancel-alert">取消</button>
+      <button class="agree-alert">確認</button>
     </div>
   </div>
 </div>
@@ -31,8 +29,11 @@ Javascript
 $('#btn').on('click', () => {
   $('.tko-alert').tkoAlert({
     action: 'show',
-    callback: function() {
-      $('.tko-alert').tkoAlert()
+    success() {
+      // do something      
+    },
+    cancel() {
+      // do something      
     }
   })
 })
