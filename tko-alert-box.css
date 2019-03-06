@@ -1,0 +1,78 @@
+.tko-alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(178, 190, 195, 0.8);
+  display: none;
+}
+.tko-alert .alert-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 460px;
+  height: auto;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background: white;
+  box-shadow: -1px 3px 10px #888888;
+  transition: all 0.3s;
+}
+
+.tko-alert .alert-main:hover {
+  box-shadow: -3px 5px 10px #888888;
+}
+
+.alert-title {
+  width: 100%;
+  margin: 0 0 10px;
+  line-height: 50px;
+  font-size: 24px;
+}
+
+.alert-btn-block {
+  width: 100%;
+  margin: 10px 0 0;
+  line-height: 50px;
+  font-size: 24px;
+}
+
+.alert-content {
+  width: 100%;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-btn-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alert-btn-block > button {
+  height: 40px;
+  line-height: 38px;
+  font-size: 16px;
+  border: 1px solid #e1251b;
+  margin: 5px;
+  width: 150px;
+  color: #e1251b;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.alert-btn-block > button:nth-child(2) {
+  color: white;
+  background: #e1251b;
+}
+
+button {
+  cursor: pointer;
+}
