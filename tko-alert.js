@@ -2,24 +2,36 @@
   $.fn.tkoAlert = function(options) {
     const setting = $.extend(
       {
-        action: 'hide'
+        action: 'hide',
+        cancel: function() {},
+        success: function() {}
       },
       options
     )
 
-    if (setting.action == 'show') {
+    if (options.action == 'show') {
       $('.tko-alert').show()
-    }
-    if (setting.action == 'hide') {
+    } else if (options.action == 'hide') {
       $('.tko-alert').hide()
     }
-    $('#cancel-alert').click(function() {
-      $('.tko-alert').hide()
-    })
-    $('#agree-alert').click(function() {
-      if ($.isFunction(setting.callback)) {
-        setting.callback.call(this)
+
+    $('.cancel-alert').on('click', function() {
+      if ($.isFunction(setting.cancel)) {
+        options.cancel.call(this)
       }
+      removeEvent()
     })
+    $('.agree-alert').on('click', function() {
+      if ($.isFunction(setting.success)) {
+        options.success.call(this)
+      }
+      removeEvent()
+    })
+
+    function removeEvent() {
+      $('.tko-alert').hide()
+      $('.cancel-alert').off('click')
+      $('.agree-alert').off('click')
+    }
   }
 })(jQuery)

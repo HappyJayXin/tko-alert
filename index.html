@@ -14,7 +14,7 @@
   </head>
   <body>
     <button id="btn">alert</button>
-    <div class="tko-alert">
+    <div class="tko-alert hide">
       <div class="alert-main">
         <div class="alert-title">提示</div>
         <div class="alert-content">
@@ -25,8 +25,8 @@
           或再次修改個人資料以重新寄發驗證信。
         </div>
         <div class="alert-btn-block">
-          <button id="cancel-alert">取消</button>
-          <button id="agree-alert">確認</button>
+          <button class="cancel-alert">取消</button>
+          <button class="agree-alert">確認</button>
         </div>
       </div>
     </div>
@@ -37,8 +37,13 @@
       $('#btn').on('click', () => {
         $('.tko-alert').tkoAlert({
           action: 'show',
-          callback: function() {
-            $('.tko-alert').tkoAlert()
+          success() {
+            // do something
+            console.log('success')
+          },
+          cancel() {
+            // do something
+            console.log('cancel')
           }
         })
       })
