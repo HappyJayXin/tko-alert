@@ -14,16 +14,10 @@
   </head>
   <body>
     <button id="btn">alert</button>
-    <div class="tko-alert hide">
+    <div class="tko-alert">
       <div class="alert-main">
-        <div class="alert-title">提示</div>
-        <div class="alert-content">
-          為了您的購買權益，每次修改完E-mail，<br />
-          需要重新至您的信箱做驗證。<br />
-          <br />
-          若收不到信時，可先至垃圾信件查看，<br />
-          或再次修改個人資料以重新寄發驗證信。
-        </div>
+        <div class="alert-title"></div>
+        <div class="alert-content"></div>
         <div class="alert-btn-block">
           <button class="cancel-alert">取消</button>
           <button class="agree-alert">確認</button>
@@ -37,6 +31,11 @@
       $('#btn').on('click', () => {
         $('.tko-alert').tkoAlert({
           action: 'show',
+          title: '提示',
+          content: [
+            '為了您的購買權益，每次修改完E-mail，',
+            '需要重新至您的信箱做驗證。'
+          ],
           success() {
             // do something
             console.log('success')

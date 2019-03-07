@@ -3,6 +3,8 @@
     const setting = $.extend(
       {
         action: 'hide',
+        title: '',
+        content: '',
         cancel: function() {},
         success: function() {}
       },
@@ -14,6 +16,10 @@
     } else if (options.action == 'hide') {
       $('.tko-alert').hide()
     }
+
+    $('.alert-title').text(options.title)
+
+    $('.alert-content').html(options.content.join('<br>'))
 
     $('.cancel-alert').on('click', function() {
       if ($.isFunction(setting.cancel)) {
