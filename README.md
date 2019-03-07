@@ -20,6 +20,12 @@ HTML
   </div>
 </div>
 ```
+
+Use
+```javascript
+$('.tko-alert').tkoAlert()
+```
+
 Javascript
 ```javascript
 $('#btn').on('click', () => {
