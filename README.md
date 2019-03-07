@@ -31,11 +31,11 @@ Javascript
 $('#btn').on('click', () => {
   $('.tko-alert').tkoAlert({
     action: 'show',
-     title: '提示',
-     content: [
-       '為了您的購買權益，每次修改完E-mail，',
-       '需要重新至您的信箱做驗證。'
-     ],
+    title: '提示',
+    content: [
+      '為了您的購買權益，每次修改完E-mail，',
+      '需要重新至您的信箱做驗證。'
+    ],
     success() {
       // do something      
     },
