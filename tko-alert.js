@@ -4,32 +4,36 @@
       {
         action: 'hide',
         title: '',
-        content: '',
+        content: [],
         cancel: function() {},
         success: function() {}
       },
       options
     )
 
-    if (options.action == 'show') {
+    if (setting.action == 'show') {
       $('.tko-alert').show()
-    } else if (options.action == 'hide') {
+    } else if (setting.action == 'hide') {
       $('.tko-alert').hide()
     }
 
-    $('.alert-title').text(options.title)
+    $('.alert-title').text(setting.title)
 
-    $('.alert-content').html(options.content.join('<br>'))
+    if (typeof setting.content === 'string') {
+      $('.alert-content').html(setting.content)
+    } else if (typeof setting.content === 'object') {
+      $('.alert-content').html(setting.content.join('<br>'))
+    }
 
     $('.cancel-alert').on('click', function() {
       if ($.isFunction(setting.cancel)) {
-        options.cancel.call(this)
+        setting.cancel.call(this)
       }
       removeEvent()
     })
     $('.agree-alert').on('click', function() {
       if ($.isFunction(setting.success)) {
-        options.success.call(this)
+        setting.success.call(this)
       }
       removeEvent()
     })
