@@ -50,6 +50,6 @@ API  | 功能 | 類型
 default  | 不加入參數預設功能是關閉提醒視窗 | -
 action  | `show`和`hide`，控制開啟和關閉提醒視窗 | String
 title | 提醒視窗標題，預設空字串，也可以填寫在html中 | String
-content | 提醒視窗內容，預設空字串，用每個元素隔開代表斷行 | Array
+content | 提醒視窗內容，用每個元素隔開代表斷行，如果只有一行則可以使用字串 | String or Array
 cancel | 按下取消事件要做的事 | Function
 success | 按下確定事件要做的事 | Function
